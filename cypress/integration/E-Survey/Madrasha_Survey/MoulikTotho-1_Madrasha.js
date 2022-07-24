@@ -13,7 +13,15 @@ it('login as Madrasha user', ()=> {
 })
 
 it('Enter Survey Data', ()=> {
-    madrashaobjects.madrasha_survey()
+    madrashaobjects.madrasha_survey(
+        "13",
+        "+88-7713333",
+        "+8801712131415",
+        "+8801712131416",
+        "nalla.polla@gmail.com",
+        "https://www.nalla.polla.gov.bd"
+
+    )
 })
 
 
