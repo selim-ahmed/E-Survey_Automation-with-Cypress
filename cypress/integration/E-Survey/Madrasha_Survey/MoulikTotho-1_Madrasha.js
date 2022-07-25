@@ -54,25 +54,27 @@ export class objectsForMadrasha{
     // 1.3.6 Type of communication system with administrative units radio button
         //cy.xpath("//input[@value='EXCELLENT']")             //Excellent radio button
         cy.xpath("//input[@value='GOOD']").check()                  //Good radio button
-    //cy.xpath("//input[@value='INACCESSIBLE']")          //Inaccessable radio button
+        //cy.xpath("//input[@value='INACCESSIBLE']")          //Inaccessable radio button
+        
         
         cy.xpath("//input[@name='onePointThree.nearestSimilarInstituteDistanceKm']").type(distance)
-    //Branch radio button Y/N
-        cy.xpath("//input[@name='onePointThree.nearestSimilarInstituteDistanceKm']")
-    //cy.xpath("//input[@name='onePointThree.nearestSimilarInstituteDistanceKm']")
-        cy.xpath("//input[@name='onePointThree.noOfBranch']").type()
-        cy.xpath("//input[@name='onePointThree.instituteBranch.1.branchNameBn']").type()
-        cy.xpath("//input[@name='onePointThree.instituteBranch.2.branchNameBn']").type()
+    //section 1.3.8 Branch radio button Y/N
+        cy.xpath("//span[contains(text(),'হ্যাঁ')]//input[@name='onePointThree.hasAnyBranch']")
+        cy.xpath("//span[contains(text(),'না')]//input[@name='onePointThree.hasAnyBranch']")
+        
+        cy.xpath("//input[@name='onePointThree.noOfBranch']").type(NumberOfBranch)
+        cy.xpath("//input[@name='onePointThree.instituteBranch.1.branchNameBn']").type(BranchName1)
+        cy.xpath("//input[@name='onePointThree.instituteBranch.2.branchNameBn']").type(BranchName1)
         cy.xpath("//span[contains(text(),'হ্যাঁ')]//input[@name='onePointThree.hasDoubleShift']").check()          //section 1.3.10 yes
         cy.xpath("//span[contains(text(),'না')]//input[@name='onePointThree.hasDoubleShift']").check()          //section 1.3.10 no
-        cy.xpath("//span[contains(text(),'হ্যাঁ')]//input[@name='onePointThree.hasOwnCampus']")            //Section 1.3.11 yes
-        cy.xpath("//span[contains(text(),'না')]//input[@name='onePointThree.hasOwnCampus']")             //Section 1.3.11 no
-        cy.xpath("//span[contains(text(),'হ্যাঁ')]//input[@name='onePointThree.hasOtherInstituteInThisCampus']")
-        cy.xpath("//span[contains(text(),'না')]//input[@name='onePointThree.hasOtherInstituteInThisCampus']")
-        cy.xpath("//select[@name='onePointThree.otherInstituteTypeId']")    // section 1.3.13
-        cy.xpath("//select[@name='onePointThree.isVocationalMpo']")         // section 1.3.15
-        cy.xpath("//select[@name='onePointThree.instituteHeadType']")       // section 1.3.16
-        cy.xpath("//select[@name='onePointThree.hasNightGuard']")           // section 1.3.17
+        cy.xpath("//span[contains(text(),'হ্যাঁ')]//input[@name='onePointThree.hasOwnCampus']").check()             //Section 1.3.11 yes
+        cy.xpath("//span[contains(text(),'না')]//input[@name='onePointThree.hasOwnCampus']").check()              //Section 1.3.11 no
+        cy.xpath("//span[contains(text(),'হ্যাঁ')]//input[@name='onePointThree.hasOtherInstituteInThisCampus']").check() //radiobutton yes
+        cy.xpath("//span[contains(text(),'না')]//input[@name='onePointThree.hasOtherInstituteInThisCampus']").check()  //radiobutton no
+        cy.xpath("//select[@name='onePointThree.otherInstituteTypeId']")    // section 1.3.13 dropdown
+        cy.xpath("//select[@name='onePointThree.isVocationalMpo']")         // section 1.3.15 dropdown
+        cy.xpath("//select[@name='onePointThree.instituteHeadType']")       // section 1.3.16 dropdown
+        cy.xpath("//select[@name='onePointThree.hasNightGuard']")           // section 1.3.17 dropdown
         
     //section 1.3.18 
             //cy.xpath("")
@@ -95,41 +97,40 @@ export class objectsForMadrasha{
         cy.xpath("//input[@name='onePointFour.schoolCommittee.committeeNoOfMemberFemale']") // committee member female
         
         // section 1.4.7 managing committee meeting
-        cy.xpath("//input[@name='onePointFour.managingCommitteeDiscussionTopics.0.isChecked']")
-        cy.xpath("//input[@name='onePointFour.managingCommitteeDiscussionTopics.1.isChecked']")
-        cy.xpath("//input[@name='onePointFour.managingCommitteeDiscussionTopics.2.isChecked']")
-        cy.xpath("//input[@name='onePointFour.managingCommitteeDiscussionTopics.3.isChecked']")
-        cy.xpath("//input[@name='onePointFour.managingCommitteeDiscussionTopics.4.isChecked']")
-        cy.xpath("//input[@name='onePointFour.managingCommitteeDiscussionTopics.5.isChecked']")
-        cy.xpath("//input[@name='onePointFour.managingCommitteeDiscussionTopics.6.isChecked']")
-        cy.xpath("//input[@name='onePointFour.managingCommitteeDiscussionTopics.7.isChecked']")
-        cy.xpath("//input[@name='onePointFour.managingCommitteeDiscussionTopics.8.isChecked']")
-        cy.xpath("//input[@name='onePointFour.managingCommitteeDiscussionTopics.9.isChecked']")
-        cy.xpath("//input[@name='onePointFour.managingCommitteeDiscussionTopics.10.isChecked']")
-        cy.xpath("//input[@name='onePointFour.managingCommitteeDiscussionTopics.11.isChecked']")
-        cy.xpath("//input[@name='onePointFour.managingCommitteeDiscussionTopics.12.isChecked']")
-        cy.xpath("//input[@name='onePointFour.managingCommitteeDiscussionTopics.13.isChecked']")
-        cy.xpath("//input[@name='onePointFour.managingCommitteeDiscussionTopics.14.isChecked']")
-        cy.xpath("//input[@name='onePointFour.managingCommitteeDiscussionTopics.15.isChecked']")
+        cy.xpath("//input[@name='onePointFour.managingCommitteeDiscussionTopics.0.isChecked']").check()
+        cy.xpath("//input[@name='onePointFour.managingCommitteeDiscussionTopics.1.isChecked']").check()
+        cy.xpath("//input[@name='onePointFour.managingCommitteeDiscussionTopics.2.isChecked']").check()
+        cy.xpath("//input[@name='onePointFour.managingCommitteeDiscussionTopics.3.isChecked']").check()
+        cy.xpath("//input[@name='onePointFour.managingCommitteeDiscussionTopics.4.isChecked']").check()
+        cy.xpath("//input[@name='onePointFour.managingCommitteeDiscussionTopics.5.isChecked']").check()
+        cy.xpath("//input[@name='onePointFour.managingCommitteeDiscussionTopics.6.isChecked']").check()
+        cy.xpath("//input[@name='onePointFour.managingCommitteeDiscussionTopics.7.isChecked']").check()
+        cy.xpath("//input[@name='onePointFour.managingCommitteeDiscussionTopics.8.isChecked']").check()
+        cy.xpath("//input[@name='onePointFour.managingCommitteeDiscussionTopics.9.isChecked']").check()
+        cy.xpath("//input[@name='onePointFour.managingCommitteeDiscussionTopics.10.isChecked']").check()
+        cy.xpath("//input[@name='onePointFour.managingCommitteeDiscussionTopics.11.isChecked']").check()
+        cy.xpath("//input[@name='onePointFour.managingCommitteeDiscussionTopics.12.isChecked']").check()
+        cy.xpath("//input[@name='onePointFour.managingCommitteeDiscussionTopics.13.isChecked']").check()
+        cy.xpath("//input[@name='onePointFour.managingCommitteeDiscussionTopics.14.isChecked']").check()
+        cy.xpath("//input[@name='onePointFour.managingCommitteeDiscussionTopics.15.isChecked']").check()
         
          // section 1.4.8 PTA meeting
-         cy.xpath("//input[@name='onePointFour.ptaMeetingDiscussionAndDecisions.0.isChecked']")
-         cy.xpath("//input[@name='onePointFour.ptaMeetingDiscussionAndDecisions.1.isChecked']")
-         cy.xpath("//input[@name='onePointFour.ptaMeetingDiscussionAndDecisions.2.isChecked']")
-         cy.xpath("//input[@name='onePointFour.ptaMeetingDiscussionAndDecisions.3.isChecked']")
-         cy.xpath("//input[@name='onePointFour.ptaMeetingDiscussionAndDecisions.4.isChecked']")
-         cy.xpath("//input[@name='onePointFour.ptaMeetingDiscussionAndDecisions.5.isChecked']")
-         cy.xpath("//input[@name='onePointFour.ptaMeetingDiscussionAndDecisions.6.isChecked']")
-         cy.xpath("//input[@name='onePointFour.ptaMeetingDiscussionAndDecisions.7.isChecked']")
-         cy.xpath("//input[@name='onePointFour.ptaMeetingDiscussionAndDecisions.8.isChecked']")
-         cy.xpath("//input[@name='onePointFour.ptaMeetingDiscussionAndDecisions.9.isChecked']")
-         cy.xpath("//input[@name='onePointFour.ptaMeetingDiscussionAndDecisions.10.isChecked']")
-         cy.xpath("//input[@name='onePointFour.ptaMeetingDiscussionAndDecisions.11.isChecked']")
-         cy.xpath("//input[@name='onePointFour.ptaMeetingDiscussionAndDecisions.12.isChecked']")
-         cy.xpath("//input[@name='onePointFour.ptaMeetingDiscussionAndDecisions.13.isChecked']")
-         cy.xpath("//input[@name='onePointFour.ptaMeetingDiscussionAndDecisions.14.isChecked']")
-         cy.xpath("//input[@name='onePointFour.ptaMeetingDiscussionAndDecisions.15.isChecked']")
-         
+         cy.xpath("//input[@name='onePointFour.ptaMeetingDiscussionAndDecisions.0.isChecked']").check()
+         cy.xpath("//input[@name='onePointFour.ptaMeetingDiscussionAndDecisions.1.isChecked']").check()
+         cy.xpath("//input[@name='onePointFour.ptaMeetingDiscussionAndDecisions.2.isChecked']").check()
+         cy.xpath("//input[@name='onePointFour.ptaMeetingDiscussionAndDecisions.3.isChecked']").check()
+         cy.xpath("//input[@name='onePointFour.ptaMeetingDiscussionAndDecisions.4.isChecked']").check()
+         cy.xpath("//input[@name='onePointFour.ptaMeetingDiscussionAndDecisions.5.isChecked']").check()
+         cy.xpath("//input[@name='onePointFour.ptaMeetingDiscussionAndDecisions.6.isChecked']").check()
+         cy.xpath("//input[@name='onePointFour.ptaMeetingDiscussionAndDecisions.7.isChecked']").check()
+         cy.xpath("//input[@name='onePointFour.ptaMeetingDiscussionAndDecisions.8.isChecked']").check()
+         cy.xpath("//input[@name='onePointFour.ptaMeetingDiscussionAndDecisions.9.isChecked']").check()
+         cy.xpath("//input[@name='onePointFour.ptaMeetingDiscussionAndDecisions.10.isChecked']").check()
+         cy.xpath("//input[@name='onePointFour.ptaMeetingDiscussionAndDecisions.11.isChecked']").check()
+         cy.xpath("//input[@name='onePointFour.ptaMeetingDiscussionAndDecisions.12.isChecked']").check()
+         cy.xpath("//input[@name='onePointFour.ptaMeetingDiscussionAndDecisions.13.isChecked']").check()
+         cy.xpath("//input[@name='onePointFour.ptaMeetingDiscussionAndDecisions.14.isChecked']").check()
+         cy.xpath("//input[@name='onePointFour.ptaMeetingDiscussionAndDecisions.15.isChecked']").check()
          
          //cy.xpath("")
          //cy.xpath("")
