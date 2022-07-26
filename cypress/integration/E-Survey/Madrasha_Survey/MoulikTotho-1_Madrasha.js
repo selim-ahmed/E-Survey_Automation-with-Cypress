@@ -16,14 +16,16 @@ export class objectsForMadrasha{
     }
 
     
-    madrashaSurvey_moulik_totho_1(wordNo, phoneNo, mobileNo, altMobileNo, email, website){
+    madrashaSurvey_moulik_totho_1(wordNo, phoneNo, mobileNo, altMobileNo, email, website,
+        distance, NumberOfBranch, BranchName1, BranchName2, MaleTeacher, FemaleTeacher, MaleEmp,
+        FemaleEmp, estDate, ExpDate, totalMember, femaleMember,totalCommitteeMeeting,totalPTAMeeting){
         //cy.xpath("//button[@type='submit']").click()
-        cy.xpath("/html[1]/body[1]/div[1]/main[1]/div[1]/div[1]/div[4]/div[1]/a[1]/button[1]").click()
+        cy.xpath("/html[1]/body[1]/div[1]/main[1]/div[1]/div[1]/div[3]/div[2]/div[1]/a[1]/button[1]").click()
 
     //Moulik totho-1 start
         //sadharon totho 1.1 
-        cy.xpath("//input[@name='onePointOne.wardNo']").type(wordNo)  //word no
-        cy.xpath("//input[@placeholder='8802XXXXXXXX']").type(phoneNo) //Phone
+        cy.xpath("//input[@name='onePointOne.wardNo']").clear().type(wordNo)  //word no
+        cy.xpath("//input[@placeholder='8802XXXXXXXX']").clear().type(phoneNo) //Phone
         cy.xpath("//input[@name='onePointOne.mobile']").clear().type(mobileNo)  //mobile No
         cy.xpath("//input[@name='onePointOne.mobileAlternative']").clear().type(altMobileNo)   //alt mobile no
         cy.xpath("//input[@placeholder='test@example.com']").clear().type(email)     //email
@@ -57,24 +59,24 @@ export class objectsForMadrasha{
         //cy.xpath("//input[@value='INACCESSIBLE']")          //Inaccessable radio button
         
         
-        cy.xpath("//input[@name='onePointThree.nearestSimilarInstituteDistanceKm']").type(distance)
+        cy.xpath("//input[@name='onePointThree.nearestSimilarInstituteDistanceKm']").clear().type(distance)
     //section 1.3.8 Branch radio button Y/N
-        cy.xpath("//span[contains(text(),'হ্যাঁ')]//input[@name='onePointThree.hasAnyBranch']")
-        cy.xpath("//span[contains(text(),'না')]//input[@name='onePointThree.hasAnyBranch']")
+        cy.xpath("//span[contains(text(),'হ্যাঁ')]//input[@name='onePointThree.hasAnyBranch']").check()
+        //cy.xpath("//span[contains(text(),'না')]//input[@name='onePointThree.hasAnyBranch']")
         
-        cy.xpath("//input[@name='onePointThree.noOfBranch']").type(NumberOfBranch)
-        cy.xpath("//input[@name='onePointThree.instituteBranch.1.branchNameBn']").type(BranchName1)
-        cy.xpath("//input[@name='onePointThree.instituteBranch.2.branchNameBn']").type(BranchName1)
+        cy.xpath("//input[@name='onePointThree.noOfBranch']").clear().type(NumberOfBranch)
+        cy.xpath("//input[@name='onePointThree.instituteBranch.1.branchNameBn']").clear().type(BranchName1)
+        cy.xpath("//input[@name='onePointThree.instituteBranch.2.branchNameBn']").clear().type(BranchName2)
         cy.xpath("//span[contains(text(),'হ্যাঁ')]//input[@name='onePointThree.hasDoubleShift']").check()          //section 1.3.10 yes
-        cy.xpath("//span[contains(text(),'না')]//input[@name='onePointThree.hasDoubleShift']").check()          //section 1.3.10 no
+        //cy.xpath("//span[contains(text(),'না')]//input[@name='onePointThree.hasDoubleShift']").check()          //section 1.3.10 no
         cy.xpath("//span[contains(text(),'হ্যাঁ')]//input[@name='onePointThree.hasOwnCampus']").check()             //Section 1.3.11 yes
-        cy.xpath("//span[contains(text(),'না')]//input[@name='onePointThree.hasOwnCampus']").check()              //Section 1.3.11 no
-        cy.xpath("//span[contains(text(),'হ্যাঁ')]//input[@name='onePointThree.hasOtherInstituteInThisCampus']").check() //radiobutton yes
+        //cy.xpath("//span[contains(text(),'না')]//input[@name='onePointThree.hasOwnCampus']").check()              //Section 1.3.11 no
+        //cy.xpath("//span[contains(text(),'হ্যাঁ')]//input[@name='onePointThree.hasOtherInstituteInThisCampus']").check() //radiobutton yes
         cy.xpath("//span[contains(text(),'না')]//input[@name='onePointThree.hasOtherInstituteInThisCampus']").check()  //radiobutton no
-        cy.xpath("//select[@name='onePointThree.otherInstituteTypeId']")    // section 1.3.13 dropdown
-        cy.xpath("//select[@name='onePointThree.isVocationalMpo']")         // section 1.3.15 dropdown
-        cy.xpath("//select[@name='onePointThree.instituteHeadType']")       // section 1.3.16 dropdown
-        cy.xpath("//select[@name='onePointThree.hasNightGuard']")           // section 1.3.17 dropdown
+        //cy.xpath("//select[@name='onePointThree.otherInstituteTypeId']")    // section 1.3.13 dropdown
+        cy.xpath("//select[@name='onePointThree.isVocationalMpo']").select('NOT_APPLICABLE').should('have.value','NOT_APPLICABLE')  // section 1.3.15 dropdown
+        cy.xpath("//select[@name='onePointThree.instituteHeadType']").select('APPOINTED').should('have.value','APPOINTED')   // section 1.3.16 dropdown
+        cy.xpath("//select[@name='onePointThree.hasNightGuard']").select('YES').should('have.value','YES')  // section 1.3.17 dropdown
         
     //section 1.3.18 
             //cy.xpath("")
@@ -84,17 +86,21 @@ export class objectsForMadrasha{
             //cy.xpath("")
         
     //Section 1.3.21
-        cy.xpath("//input[@name='onePointThree.totalTeacherStaff.totalTeacherMale']")
-        cy.xpath("//input[@name='onePointThree.totalTeacherStaff.totalTeacherFemale']")
-        cy.xpath("//input[@name='onePointThree.totalTeacherStaff.totalStaffMale']")
-        cy.xpath("//input[@name='onePointThree.totalTeacherStaff.totalStaffFemale']")
+        cy.xpath("//input[@name='onePointThree.totalTeacherStaff.totalTeacherMale']").clear().type(MaleTeacher)
+        cy.xpath("//input[@name='onePointThree.totalTeacherStaff.totalTeacherFemale']").clear().type(FemaleTeacher)
+        cy.xpath("//input[@name='onePointThree.totalTeacherStaff.totalStaffMale']").clear().type(MaleEmp)
+        cy.xpath("//input[@name='onePointThree.totalTeacherStaff.totalStaffFemale']").clear().type(FemaleEmp)
         
     // Section 1.4 Committee related information
-        cy.xpath("//select[@name='onePointFour.schoolCommittee.committeeTypeId']")  //dropdown
-        cy.xpath("//input[@name='onePointFour.schoolCommittee.establishmentDate']") //date
-        cy.xpath("//input[@name='onePointFour.schoolCommittee.expirationDate']")    //date
-        cy.xpath("//input[@name='onePointFour.schoolCommittee.committeeNoOfMemberTotal']") // committee member total 
-        cy.xpath("//input[@name='onePointFour.schoolCommittee.committeeNoOfMemberFemale']") // committee member female
+        cy.xpath("//select[@name='onePointFour.schoolCommittee.committeeTypeId']").select('9').should('have.value','9')  //dropdown
+        cy.xpath("//input[@name='onePointFour.schoolCommittee.establishmentDate']").clear().type(estDate) //date
+        cy.xpath("//input[@name='onePointFour.schoolCommittee.expirationDate']").clear().type(ExpDate)    //date
+        cy.xpath("//input[@name='onePointFour.schoolCommittee.committeeNoOfMemberTotal']").clear().type(totalMember) // committee member total 
+        cy.xpath("//input[@name='onePointFour.schoolCommittee.committeeNoOfMemberFemale']").clear().type(femaleMember) // committee member female
+
+        //1.4.5 & 1.4.6 Section
+        cy.xpath("//input[@name='onePointFour.noOfMeetingConductedByManagingCommittee']").clear().type(totalCommitteeMeeting)
+        cy.xpath("//input[@name='onePointFour.noOfMeetingConductedByPta']").clear().type(totalPTAMeeting)
         
         // section 1.4.7 managing committee meeting
         cy.xpath("//input[@name='onePointFour.managingCommitteeDiscussionTopics.0.isChecked']").check()
@@ -134,7 +140,5 @@ export class objectsForMadrasha{
          
          //cy.xpath("")
          //cy.xpath("")
-
-
     }
 }

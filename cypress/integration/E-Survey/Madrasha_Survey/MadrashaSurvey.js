@@ -20,8 +20,21 @@ it('Enter Survey Data', ()=> {
         "+8801712131415",
         "+8801712131416",
         "nalla.polla@gmail.com",
-        "https://www.nalla.polla.gov.bd"
-
+        "https://www.nalla.polla.gov.bd",
+        "12",
+        "2",
+        "Shapla",
+        "golap",
+        "10",
+        "2",
+        "5",
+        "3",
+        "1990-01-01",
+        "2020-12-31",
+        "11",
+        "4",
+        "1",
+        "1"
     )
 })
 
