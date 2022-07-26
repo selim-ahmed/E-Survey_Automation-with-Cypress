@@ -3,7 +3,7 @@ export class objectsForMadrasha{
     navigate(){
 
         cy.visit("http://103.4.145.251:3028/")
-        cy.viewport(1536, 960)
+        cy.viewport(1920, 1080)
         cy.xpath("//button[@role='button']").click()
 
     }
