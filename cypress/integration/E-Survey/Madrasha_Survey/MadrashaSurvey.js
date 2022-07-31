@@ -12,7 +12,7 @@ it('login as Madrasha user', ()=> {
     madrashaobjects.login(108438,123456)
 })
 
-it('Enter Survey Data', ()=> {
+it('Enter Survey Data for Moulok Totho 1', ()=> {
     madrashaobjects.madrashaSurvey_moulik_totho_1(
         //Section 1.1.1
         "13",
